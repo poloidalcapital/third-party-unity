@@ -1,0 +1,24 @@
+This release_2.6.1 branch was created using the commit hash for release 2.6.1
+cbcd08fa7de711053a3deec6339ee89cad5d2697
+Note that tags were lost when the repo was forked so look in the original repo for release tags and the hash.
+
+It was then build as follows:
+
+cmake -E make_directory build; cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make install
+cd ..
+mkdir include
+mkdir lib
+mkdir release
+
+cp /usr/local/include/unity/unity.h ./include/
+cp /usr/local/include/unity/unity_internals.h ./include/
+cp /usr/local/lib/libunity.a ./lib
+
+tar cvf 2.6.1_release.tar ./include ./lib
+mv 2.6.1_release.tar ./release/
+
+Note: Only the static lib was built. See docs for shared-lib build instructions
+
+add, commit and push the lib and include directories
