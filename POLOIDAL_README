@@ -4,9 +4,13 @@ Note that tags were lost when the repo was forked so look in the original repo f
 
 It was then build as follows:
 
+Add the following line to CMakeLists.txt
+target_compile_definitions(${PROJECT_NAME} PUBLIC UNITY_INCLUDE_DOUBLE)
+
+
 cmake -E make_directory build; cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
-make install
+sudo make install
 cd ..
 mkdir include
 mkdir lib

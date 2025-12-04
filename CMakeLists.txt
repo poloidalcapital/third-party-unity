@@ -98,6 +98,14 @@ set_target_properties(${PROJECT_NAME}
         EXPORT_NAME         framework
 )
 
+
+
+
+target_compile_definitions(${PROJECT_NAME} PUBLIC UNITY_INCLUDE_DOUBLE)
+
+
+
+
 target_compile_options(${PROJECT_NAME}
     PRIVATE
         # Clang
@@ -105,7 +113,7 @@ target_compile_options(${PROJECT_NAME}
             -Wcast-align
             -Wcast-qual
             -Wconversion
-            -Wexit-time-destructors                            
+            -Wexit-time-destructors
             -Wglobal-constructors
             -Wmissing-noreturn
             -Wmissing-prototypes
